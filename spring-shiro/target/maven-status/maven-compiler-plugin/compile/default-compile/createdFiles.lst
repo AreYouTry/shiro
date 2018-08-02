@@ -1,0 +1,6 @@
+cn\jxnu\shiro\UserRealm.class
+cn\jxnu\mapper\UserMapper.class
+cn\jxnu\service\UserService.class
+cn\jxnu\service\impl\UserServiceImpl.class
+cn\jxnu\controller\UserController.class
+cn\jxnu\domain\User.class

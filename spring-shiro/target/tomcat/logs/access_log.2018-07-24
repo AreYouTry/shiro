@@ -1,0 +1,9 @@
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:12 +0800] "GET /spring-shiro/add.action HTTP/1.1" 302 - http-bio-8080-exec-1 174
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:13 +0800] "GET /spring-shiro/toLogin.action HTTP/1.1" 200 359 http-bio-8080-exec-3 1039
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:19 +0800] "POST /spring-shiro/login.action HTTP/1.1" 200 371 http-bio-8080-exec-4 434
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:22 +0800] "POST /spring-shiro/login.action HTTP/1.1" 302 - http-bio-8080-exec-5 23
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:23 +0800] "GET /spring-shiro/succ.action HTTP/1.1" 200 214 http-bio-8080-exec-6 399
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:25 +0800] "GET /spring-shiro/add.action HTTP/1.1" 200 138 http-bio-8080-exec-7 124
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:34 +0800] "POST /spring-shiro/login.action HTTP/1.1" 302 - http-bio-8080-exec-8 15
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:34 +0800] "GET /spring-shiro/succ.action HTTP/1.1" 200 217 http-bio-8080-exec-10 11
+0:0:0:0:0:0:0:1 - - [24/Jul/2018:11:23:40 +0800] "GET /spring-shiro/update.action HTTP/1.1" 200 132 http-bio-8080-exec-10 93

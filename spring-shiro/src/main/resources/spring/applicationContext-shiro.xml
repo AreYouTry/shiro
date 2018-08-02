@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"       
+	xmlns:p="http://www.springframework.org/schema/p"  
+	xmlns:context="http://www.springframework.org/schema/context"   
+	xmlns:tx="http://www.springframework.org/schema/tx"  
+	xmlns:aop="http://www.springframework.org/schema/aop"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans    
+	http://www.springframework.org/schema/beans/spring-beans.xsd    
+	http://www.springframework.org/schema/aop    
+	http://www.springframework.org/schema/aop/spring-aop.xsd    
+	http://www.springframework.org/schema/tx    
+	http://www.springframework.org/schema/tx/spring-tx.xsd    
+	http://www.springframework.org/schema/context    
+	http://www.springframework.org/schema/context/spring-context.xsd">
+	
+	<description>Shiro的配置文件</description>
+	
+	<!-- SecurityManager配置 -->
+	<!-- 配置Realm域 -->
+	<!-- 密码比较器 -->
+	<!-- 代理如何生成？ 用工厂来生成Shiro的相关过滤器-->
+	<!-- 配置缓存：ehcache缓存 -->
+	<!-- 安全管理 -->
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="userRealm"/><!-- 引用自定义的realm -->
+    </bean>
+
+    <!-- 自定义权限认证 -->
+    <bean id="userRealm" class="cn.jxnu.shiro.UserRealm"/>
+
+    <!-- filter-name这个名字的值来自于web.xml中filter的名字 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!--登录页面,就是拦截的页面  -->
+        <property name="loginUrl" value="/toLogin.action"></property>
+        <!--没有权限的跳转页面  -->
+		<property name="unauthorizedUrl" value="/noAuth.action"/>
+        <property name="filterChainDefinitions">
+            <!-- /**代表下面的多级目录也过滤 -->
+            <value>
+            	/login* = anon
+            	/add* = perms[user:add]
+            	/update* = perms[user:update]
+            	/** = authc
+            </value>
+        </property>
+    </bean>
+
+   
+</beans>
